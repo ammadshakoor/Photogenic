@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Photogenic.pk</title>
+    <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet"/>
+	
+	<!-- Template Styles -->
+    <link href="Admin/css/font-awesome.min.css" rel="stylesheet" />
+
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="Admin/css/normalize.css"/>
+	
+	<!-- Milligram CSS minified -->
+	<link rel="stylesheet" href="Admin/css/milligram.min.css"/>
+	
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="Admin/css/styles.css"/>
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+         <div class="navbar">
+            <div class="row">
+                <div class="column column-30 col-site-title"><a href="#" class="site-title float-left">Photogenic.pk</a></div>
+                <div class="column column-30 col-search">
+                    <a href="#" class="search-btn fa fa-search"></a>
+                    <input type="text" name="" value="" placeholder="Search..." />
+                </div>
+                <div class="column column-30">
+                    <div class="user-section">
+                        <a href="#">
+                            <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="50" />
+                            <div class="username">
+                                
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolderUserDisplayName" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                
+                                
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolderUserDisplayRole" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column column-10">
+                    <a href="#"><em class="fa fa-sign-out">Logout</em></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+		    <div id="sidebar" class="column">
+			    <h5>Menu</h5>
+			    <ul>
+				    <li><a href="Admin_Home.aspx"><em class="fa fa-home"></em> Home</a></li>
+				    <li><a href="Admin_Statistics.aspx"><em class="fa fa-bar-chart"></em> Market Trend</a></li>
+				    <li><a href="Category_Management_Admin.aspx"><em class="fa fa-pencil-square-o"></em> Category Management</a></li>
+				    <li><a href="Admin_User_Management.aspx"><em class="fa fa-warning"></em> User Management</a></li>	
+				    <li><a href="Product_Management_Admin.aspx"><em class="fa fa-cart-arrow-down"></em> Product Management</a></li>	
+				    <li><a href="Admin_Payment_Management.aspx"><em class="fa fa-credit-card"></em> Payment</a></li>	
+				    <li><a href="Admin_Addverts_Management.aspx"><em class="fa fa-money"></em> Advertisement</a></li>
+				    <li><a href="Admin_Complain_Management.aspx"><em class="fa fa-address-card"></em> Complain Management</a></li>		
+			    </ul>
+		    </div>
+            
+		    <section id="main-content" class="column column-offset-20">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderSection" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </section>
+        </div>
+        
+            
+        </div>
+    </form>
+</body>
+</html>
