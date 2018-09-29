@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Photogenic.pk</title>
+    <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet"/>
+	
+	<!-- Template Styles -->
+    <link href="Admin/css/font-awesome.min.css" rel="stylesheet" />
+
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="css/normalize.css"/>
+	
+	<!-- Milligram CSS minified -->
+	<link rel="stylesheet" href="css/milligram.min.css"/>
+	
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="css/styles.css"/>
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <form id="formAdminMasterPage" runat="server">
+        <div>
+
+            <div class="navbar">
+                <div class="row">
+                    <!-- Title of Admin master page -->
+                    <div class="column column-30 col-site-title"><a href="#" class="site-title float-left">Photogenic.pk</a></div>
+
+                    <!-- Add tabs availabe for all users -->
+
+                    <div class="column column-40 ">
+                        <asp:Button ID="BtnHomeAdmin" runat="server" Text="Home Page" cssClass="button button-outline"/>
+                        <asp:Button ID="BtnShowcaseAdmin" runat="server" Text="Showcase" cssClass="button button-outline"/>
+                        <asp:Button ID="BtnBucketAdmin" runat="server" Text="Bucket" cssClass="button button-outline"/>
+                        <asp:Button ID="BtnMarketTrendAdmin" runat="server" Text="Market Trend" cssClass="button button-outline"/>
+                    </div>
+                    <div class="column column-30">
+                        <div class="user-section">
+                            <a href="#">
+                                <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="50" />
+                                <div class="username">
+
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolderUserDisplayName" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolderUserDisplayRole" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column column-10">
+                        <a href="#"><em class="fa fa-sign-out">Logout</em></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Side bar of ADMIN to display list of link pages -->
+                <div id="sidebar" class="column">
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="Statistics_Management_Admin.aspx"><em class="fa fa-bar-chart"></em>Market Trend</a></li>
+                        <li><a href="Category_Management_Admin.aspx"><em class="fa fa-pencil-square-o"></em>Category Management</a></li>
+                        <li><a href="User_Management_Admin.aspx"><em class="fa fa-warning"></em>User Management</a></li>
+                        <li><a href="Product_Management_Admin.aspx"><em class="fa fa-cart-arrow-down"></em>Product Management</a></li>
+                        <li><a href="Payment_Management_Admin.aspx"><em class="fa fa-credit-card"></em>Payment</a></li>
+                        <li><a href="Adverts_Management_Admin.aspx"><em class="fa fa-money"></em>Advertisement</a></li>
+                        <li><a href="Complain_Management_Admin.aspx"><em class="fa fa-address-card"></em>Complain Management</a></li>
+                    </ul>
+                </div>
+
+                <section id="main-content" class="column column-offset-20">
+                    <!-- Section area for inner development of modules display here!! -->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+
+
+        </div>
+    </form>
+</body>
+</html>
