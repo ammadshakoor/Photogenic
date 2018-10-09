@@ -1,0 +1,21 @@
+﻿/*
+    Style of Top buttons-header
+*/
+
+header .account-actions .button:last-child {
+    margin-right: auto;
+}
+
+header .account-actions .button {
+    line-height: 24px;
+    height: 30px;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#footer-bottom-wrap {
+    background-color: #000;
+}
+#footer-top-wrap {
+    background-color: #000;
+}
